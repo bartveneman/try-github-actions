@@ -1,0 +1,21 @@
+{
+  "name": "try-github-actions",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0",
+    "build": "echo '.css { color: tomato; }' > build/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bartveneman/try-github-actions.git"
+  },
+  "keywords": [],
+  "author": "Bart Veneman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bartveneman/try-github-actions/issues"
+  },
+  "homepage": "https://github.com/bartveneman/try-github-actions#readme"
+}
