@@ -43,4 +43,7 @@ jobs:
         run: |
           npm ci
           npm run build
-          curl https://www.projectwallace.com/webhooks/v1/imports?token=${{secrets.PROJECT_WALLACE_WEBHOOK_TOKEN}} --request POST --header 'Content-Type: text/css' --data @build/style.css
+          curl https://www.projectwallace.com/webhooks/v1/imports?token=${{secrets.PROJECT_WALLACE_WEBHOOK_TOKEN}} \
+            --request POST \
+            --header 'Content-Type: text/css' \
+            --data @build/style.css
