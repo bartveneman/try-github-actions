@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "ava",
-    "build": "echo '.css { color: tomato; }' > build/style.css"
+    "build": "mkdir -p build && echo '.css { color: tomato; }' > build/style.css"
   },
   "repository": {
     "type": "git",
