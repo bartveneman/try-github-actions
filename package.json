@@ -2,10 +2,10 @@
   "name": "try-github-actions",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "build/style.css",
   "scripts": {
     "test": "ava",
-    "build": "mkdir -p build && echo '.css { color: tomato; }' > build/style.css"
+    "build": "mkdir -p build && cp src/style.css build"
   },
   "repository": {
     "type": "git",

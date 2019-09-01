@@ -1,6 +1,12 @@
 name: Node CI
 
-on: [push]
+on:
+  pull_requests:
+    branches:
+      - master
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -20,14 +26,23 @@ jobs:
         run: |
           npm ci
           npm test
-          npm run build
         env:
           CI: true
-      - name: report css
-        env:
-          CI: true
+
+  report:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: Report CSS to Project Wallace
         run: |
-          curl https://www.projectwallace.com/webhooks/v1/imports?token=752d32a1-ed91-470b-aeb4-3fa4421ff7a3 \
+          npm ci
+          npm run build
+          curl https://www.projectwallace.com/webhooks/v1/imports?token=${{secrets.PROJECT_WALLACE_WEBHOOK_TOKEN}} \
             --request POST \
             --header 'Content-Type: text/css' \
             --data @build/style.css
