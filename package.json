@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "exit 0",
+    "test": "ava",
     "build": "echo '.css { color: tomato; }' > build/style.css"
   },
   "repository": {
@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/bartveneman/try-github-actions/issues"
   },
-  "homepage": "https://github.com/bartveneman/try-github-actions#readme"
+  "homepage": "https://github.com/bartveneman/try-github-actions#readme",
+  "devDependencies": {
+    "ava": "^2.3.0"
+  }
 }
