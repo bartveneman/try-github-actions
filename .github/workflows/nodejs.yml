@@ -35,7 +35,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - name: "Use Node 10.x"
+        uses: actions/setup-node@v1
         with:
           node-version: 10.x
       - name: Report CSS to Project Wallace
@@ -43,6 +44,6 @@ jobs:
           npm ci
           npm run build
           curl https://www.projectwallace.com/webhooks/v1/imports?token=${{secrets.PROJECT_WALLACE_WEBHOOK_TOKEN}} \
-            --request POST \
-            --header 'Content-Type: text/css' \
-            --data @build/style.css
+          --request POST \
+          --header 'Content-Type: text/css' \
+          --data @build/style.css
