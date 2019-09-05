@@ -5,3 +5,16 @@
 .second-rule {
   color: red;
 }
+
+.new-pr {
+  color: green;
+  content: "added";
+}
+
+.pr-3 {
+  color: blue;
+}
+
+.pr-4 {
+  color: deepskyblue;
+}
