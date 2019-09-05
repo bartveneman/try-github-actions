@@ -8,7 +8,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
       - run: npm ci
+      - run: mkdir build
+      - id: build
+        run: echo 'a{}' > build/style.css && cat build/style.css
       - uses: bartveneman/project-wallace-github-action@master
         with:
           project_wallace_token: ${{ secrets.PROJECT_WALLACE_WEBHOOK_TOKEN }}
+          css: ${{steps.build.output}}
