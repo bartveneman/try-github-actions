@@ -11,4 +11,4 @@ jobs:
       - run: npm ci
       - uses: bartveneman/project-wallace-github-action@master
         with:
-          project_wallace_token: "{{ secrets.PROJECT_WALLACE_WEBHOOK_TOKEN }}"
+          project_wallace_token: ${{ secrets.PROJECT_WALLACE_WEBHOOK_TOKEN }}
