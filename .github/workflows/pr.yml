@@ -8,6 +8,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+      - run: npm ci
       - uses: bartveneman/project-wallace-github-action@master
         with:
           project_wallace_token: "SUPER_S3CR3T_T0K3N!"
