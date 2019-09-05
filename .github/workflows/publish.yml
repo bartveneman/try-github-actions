@@ -1,14 +1,4 @@
 name: Publish to Project Wallace
-author: Bart Veneman
-description: Push your CSS to Project Wallace for analysis
-inputs:
-  project_wallace_token:
-    description: The Webhook Token from your Project Wallace project
-    required: false
-    default: ""
-branding:
-  color: green
-  icon: trending-up
 
 on:
   push:
