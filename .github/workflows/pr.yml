@@ -7,15 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
-        with:
-          fetch-depth: 1
-      - run: npm ci
-      - run: mkdir build
-      - id: build
-        run: echo 'a{}' > build/style.css && cat build/style.css
-      - run: echo ${{steps.build.outputs.time}}
-      - uses: bartveneman/project-wallace-github-action@master
-        with:
-          project_wallace_token: ${{ secrets.PROJECT_WALLACE_WEBHOOK_TOKEN }}
-          css: ${{steps.build.outputs.time}}
+      - name: "Build CSS"
+        run: mkdir build && echo 'a{}' > build/style.css
+      - name: "Get CSS Analytics diff"
+        run: curl http://www.mocky.io/v2/5d73669d3300000f000817c5 -X POST -d @build/style.css
