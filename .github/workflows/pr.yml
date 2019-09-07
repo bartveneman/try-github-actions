@@ -13,7 +13,10 @@ jobs:
         run: curl http://www.mocky.io/v2/5d73669d3300000f000817c5 -X POST -d @build/style.css
       - name: Print env
         run: |
-          echo HOME         ${HOME}
-          echo GITHUB_ACTOR ${GITHUB_ACTOR}
-          echo GITHUB_REPOSITORY ${GITHUB_REPOSITORY}
-          echo GITHUB_SHA ${GITHUB_SHA}
+          echo HOME                ${HOME}
+          echo GITHUB_ACTOR        ${GITHUB_ACTOR}
+          echo GITHUB_REPOSITORY   ${GITHUB_REPOSITORY}
+          echo GITHUB_SHA          ${GITHUB_SHA}
+          echo GITHUB_REF          ${GITHUB_REF}
+          echo GITHUB_EVENT_NAME   ${GITHUB_EVENT_NAME}
+          echo GITHUB_EVENT_PATH   ${GITHUB_EVENT_PATH}
